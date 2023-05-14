@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
 
@@ -17,7 +18,7 @@ class AboutMe extends StatelessWidget {
                 child: Column(
                   children: [
                     Text('A bit about me'.toUpperCase(),
-                    textAlign: TextAlign.left,
+                        textAlign: TextAlign.left,
                         style: GoogleFonts.roboto(
                           fontSize: 20,
                           color: Colors.white,
@@ -26,10 +27,10 @@ class AboutMe extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      'I am a UI/UX designer who is passionate about creating beautiful and joyful digital experiences. Besides design, I love music, games and travelling. ',
+                      'I am a mobile developer specialized in developing mobile applications for iOS and Android platforms using flutter. I have experience in developing mobile apps from scratch, as well as maintaining and updating existing applications. I am passionate about creating user-friendly and engaging mobile apps that provide a seamless user experience. I look forward to discussing any mobile development projects you may have in mind.',
                       textAlign: TextAlign.left,
-                      style:
-                          GoogleFonts.roboto(fontSize: 16, color: Colors.white, height: 2),
+                      style: GoogleFonts.roboto(
+                          fontSize: 16, color: Colors.white, height: 2),
                     ),
                   ],
                 ),
