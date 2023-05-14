@@ -1,6 +1,6 @@
 # portfolio
 
-A new Flutter project.
+A web portfolio project made with flutter.
 
 ## Getting Started
 
