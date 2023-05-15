@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../util/utils.dart';
@@ -18,19 +16,20 @@ class Footer extends StatelessWidget {
         children: [
           RichText(
               text: TextSpan(
-                  style:
-                      GoogleFonts.workSans(fontSize: 22, color: Colors.white),
+                  style: GoogleFonts.workSans(
+                      fontSize: 22, color: Color(0xff7D7E82)),
                   children: [
                 const TextSpan(text: 'Get '),
                 TextSpan(
                     text: 'in Touch.',
-                    style: GoogleFonts.workSans(fontWeight: FontWeight.bold))
+                    style: GoogleFonts.workSans(fontWeight: FontWeight.bold, color: Colors.white))
               ])),
-          const SizedBox(
-            height: 15,
-          ),
+          // const SizedBox(
+          //   height: 15,
+          // ),
           Text('So that we can talk more about...',
-              style: GoogleFonts.workSans(fontSize: 14, color: Colors.white)),
+              style:
+                  GoogleFonts.workSans(fontSize: 14, color: Color(0xff7D7E82))),
           const SizedBox(
             height: 30,
           ),
@@ -39,7 +38,18 @@ class Footer extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //IconButton(onPressed: onPressed, icon: Icon(Icons.mail)),
+                IconButton(
+                    onPressed: () => makePhoneCall(),
+                    icon: const Icon(
+                      Icons.local_phone_sharp,
+                      color: Colors.white,
+                    )),
+                IconButton(
+                    onPressed: () => sendEmail(),
+                    icon: const Icon(
+                      Icons.mail,
+                      color: Colors.white,
+                    )),
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
@@ -56,11 +66,11 @@ class Footer extends StatelessWidget {
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () => openUrl('https://github.com/emperorkez'),
+                    onTap: () => openUrl('https://twitter.com/jk_dazzler'),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8),
                       child: ImageIcon(
-                          AssetImage("assets/images/icon_github_64x.png"),
+                          AssetImage("assets/images/icon_twitter_64x.png"),
                           color: Colors.white,
                           size: 24),
                     ),
@@ -72,16 +82,20 @@ class Footer extends StatelessWidget {
                     onTap: () => openUrl('https://linkedin.com/emperorkez'),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: ImageIcon(
-                          AssetImage("assets/images/linkedin.png"),
-                          color: Colors.white,
-                          size: 24),
+                      child: ImageIcon(AssetImage("assets/images/linkedin.png"),
+                          color: Colors.white, size: 24),
                     ),
                   ),
                 ),
               ],
             ),
-          )
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text('Built with Flutter by emperorKez',
+              style:
+                  GoogleFonts.workSans(fontSize: 14, color: Color(0xff7D7E82))),
         ],
       ),
     );

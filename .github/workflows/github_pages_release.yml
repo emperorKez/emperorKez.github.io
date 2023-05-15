@@ -15,22 +15,32 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Clone Flutter repository with master channel
-        uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
         with:
-          channel: master
-      - run: flutter doctor -v
-
-      - name: Install web dependencies
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
-        with:
-          node-version: "14"
-      - run: npm install -g firebase-tools@11.0.1
-
-      # Checkout gallery code and get packages.
-      - name: Checkout gallery code
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+          channel: 'stable'
+          cache: true
+          # cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:'
+          # cache-path: ${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:
+          # architecture: x64
       - run: flutter pub get
+      - run: flutter test
+      # - name: Clone Flutter repository with master channel
+      #   uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa
+      #   with:
+      #     channel: master
+      # - run: flutter doctor -v
+
+      # - name: Install web dependencies
+      #   uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+      #   with:
+      #     node-version: "14"
+      # - run: npm install -g firebase-tools@11.0.1
+
+      # # Checkout gallery code and get packages.
+      # - name: Checkout gallery code
+      #   uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+      # - run: flutter pub get
 
       # - uses: actions/checkout@v3
 

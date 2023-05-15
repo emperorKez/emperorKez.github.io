@@ -30,9 +30,9 @@ class Header extends StatelessWidget {
       child: Row(
         children: [
           Image.asset(
-            'assets/images/logo.png',
-            width: 95.2 * fem,
-            height: 28 * fem,
+            'assets/images/coollogo_com.png',
+            width: 250,
+            height: 66,
           ),
           const Spacer(),
           MouseRegion(

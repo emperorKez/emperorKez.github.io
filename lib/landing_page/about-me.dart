@@ -21,7 +21,7 @@ class AboutMe extends StatelessWidget {
                         textAlign: TextAlign.left,
                         style: GoogleFonts.roboto(
                           fontSize: 20,
-                          color: Colors.white,
+                          color: Color(0xff7D7E82),
                         )),
                     const SizedBox(
                       height: 20,
@@ -30,7 +30,7 @@ class AboutMe extends StatelessWidget {
                       'I am a mobile developer specialized in developing mobile applications for iOS and Android platforms using flutter. I have experience in developing mobile apps from scratch, as well as maintaining and updating existing applications. I am passionate about creating user-friendly and engaging mobile apps that provide a seamless user experience. I look forward to discussing any mobile development projects you may have in mind.',
                       textAlign: TextAlign.left,
                       style: GoogleFonts.roboto(
-                          fontSize: 16, color: Colors.white, height: 2),
+                          fontSize: 16, color: Color(0xff7D7E82), height: 2),
                     ),
                   ],
                 ),
