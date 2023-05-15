@@ -51,7 +51,7 @@ class Showcase extends StatelessWidget {
                   'An online dating platform that allows users to create a profile, set their dating preferences, browse through other user profiles, and connect with potential romantic partners.'),
           verticalSpace,
           portfolioItem(
-              workImage: 'assets/images/icon-e3f.png',
+              workImage: 'assets/images/todo-app.png',
               workUrl: 'workUrl',
               imageFirst: false,
               title: 'Todo Mobile App',
