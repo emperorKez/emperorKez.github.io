@@ -15,25 +15,42 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-        - uses: actions/checkout@v3
+      - name: Clone Flutter repository with master channel
+        uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa
+        with:
+          channel: master
+      - run: flutter doctor -v
 
-        - name: Setup Flutter
-          run: |
-            git clone https://github.com/flutter/flutter.git --depth 1 -b beta _flutter
-            echo "${GITHUB_WORKSPACE}/_flutter/bin" >> ${GITHUB_PATH}
+      - name: Install web dependencies
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+        with:
+          node-version: "14"
+      - run: npm install -g firebase-tools@11.0.1
+
+      # Checkout gallery code and get packages.
+      - name: Checkout gallery code
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+      - run: flutter pub get
+
+      # - uses: actions/checkout@v3
+
+      # - name: Setup Flutter
+      #   run: |
+      #     git clone https://github.com/flutter/flutter.git --depth 1 -b beta _flutter
+      #     echo "${GITHUB_WORKSPACE}/_flutter/bin" >> ${GITHUB_PATH}
   
-        - name: Install
-          run: |
-            flutter config --enable-web
-            flutter pub get
+      # - name: Install
+      #   run: |
+      #     flutter config --enable-web
+      #     flutter pub get
   
-        - name: Build
-          run: flutter build web --release
+      - name: Build
+        run: flutter build web --release
   
-        - name: Deploy
-          uses: peaceiris/actions-gh-pages@v3
-          if: ${{ github.ref == 'refs/heads/master' }}
-          with:
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./build/web
 
