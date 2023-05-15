@@ -14,10 +14,6 @@ class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: const PreferredSize(
-      //   preferredSize: Size(double.infinity, 66),
-      //   child: Header(),
-      // ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -36,7 +32,8 @@ class LandingScreen extends StatelessWidget {
           ),
         ),
         child: ListView(
-          shrinkWrap: true,
+          shrinkWrap: true, 
+          physics: const AlwaysScrollableScrollPhysics(),
           padding: ResponsiveValue<EdgeInsets>(context, 
           defaultValue: const EdgeInsets.symmetric(horizontal: 20),
           conditionalValues: [

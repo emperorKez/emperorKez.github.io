@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,7 +12,11 @@ class Home extends StatelessWidget {
     // double ffem = fem * 0.97;
     return Container(
       height: 300,
-      padding: const EdgeInsets.all(50),
+      padding: ResponsiveValue<EdgeInsets>(context,
+                defaultValue: const EdgeInsets.all(15),
+                conditionalValues: [
+                  const Condition.largerThan(name: MOBILE, value: EdgeInsets.all(50))
+                ]).value! ,
       child: Center(
         child: RichText(
             textAlign: TextAlign.center,

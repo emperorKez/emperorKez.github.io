@@ -42,15 +42,15 @@ class Services extends StatelessWidget {
         GridView.count(
             shrinkWrap: true,
             crossAxisCount: ResponsiveValue<int>(context,
-                defaultValue: 3,
+                defaultValue: 2,
                 conditionalValues: [
-                  const Condition.smallerThan(name: MOBILE, value: 2)
+                  const Condition.largerThan(name: MOBILE, value: 3)
                 ]).value!,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20,
             children: [
               serviceItem(
-                  borderColor: Color(0xff7D7E82),
+                  borderColor: const Color(0xff7D7E82),
                   title: 'UI & UX DESIGNING',
                   content:
                       'I design beautiful web iterfaces with Figma and Adove XD',
@@ -62,7 +62,7 @@ class Services extends StatelessWidget {
                       'I create beautiful iterfaces with simple HTML, CSS, & JavaScript and also frameworks like Angular and ReactJS',
                   iconUrl: 'assets/images/code.png'),
               serviceItem(
-                  borderColor: Color(0xff7D7E82),
+                  borderColor: const Color(0xff7D7E82),
                   title: 'MOBILE DEVELOPMENT',
                   content:
                       'I am an expert mobile developer. I have experience using Flutter and React Native.',
@@ -74,7 +74,7 @@ class Services extends StatelessWidget {
                       'I can use version control systems well, and Git & Mecurial are my go-to tool.',
                   iconUrl: 'assets/images/git-repo.png'),
               serviceItem(
-                  borderColor: Color(0xff7D7E82),
+                  borderColor: const Color(0xff7D7E82),
                   title: 'NPM AND NODEJS',
                   content:
                       'I have core understanding of NPM. I can also develop general purpose applications with NodeJS',
@@ -106,9 +106,15 @@ class Services extends StatelessWidget {
         //mainAxisAlignment: MainAxisAlignment.center,
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(width: 72, height: 72, child: Image.asset(iconUrl, color: Color(0xff7D7E82),)),
+          ConstrainedBox(
+              //width: 72, height: 72,
+              constraints: const BoxConstraints(maxHeight: 72, maxWidth: 72),
+              child: Image.asset(
+                iconUrl,
+                color: const Color(0xff7D7E82),
+              )),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           Text(
             title,
@@ -122,7 +128,7 @@ class Services extends StatelessWidget {
           Text(
             content,
             style: GoogleFonts.roboto(
-                fontSize: 16, color: Color(0xff7D7E82), height: 1.5),
+                fontSize: 16, color: const Color(0xff7D7E82), height: 1.5),
             textAlign: TextAlign.center,
           ),
         ],

@@ -10,19 +10,14 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const Color navLinkColor = Color(0xFF6E7274);
-
-    double baseWidth = 1472;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
     return Container(
       height: 66,
       width: double.infinity,
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(5),
       margin: const EdgeInsets.symmetric(vertical: 10),
-      //EdgeInsets.fromLTRB(16 * fem, 16 * fem, 16 * fem, 16 * fem),
       decoration: BoxDecoration(
         border: Border.all(color: const Color(0xff9747ff)),
-        borderRadius: BorderRadius.circular(5 * fem),
+        borderRadius: BorderRadius.circular(10),
       ),
       //  decoration: const BoxDecoration(color: Colors.white, boxShadow: [
       //   BoxShadow(color: Color(0x1A000000), offset: Offset(0, 2), blurRadius: 4)
@@ -31,51 +26,65 @@ class Header extends StatelessWidget {
         children: [
           Image.asset(
             'assets/images/coollogo_com.png',
-            width: 250,
-            height: 66,
+            fit: BoxFit.fill,
+            width: ResponsiveValue<double>(context,
+                defaultValue: 200,
+                conditionalValues: [
+                  const Condition.largerThan(name: MOBILE, value: 250)
+                ]).value!,
+            height: 46,
           ),
           const Spacer(),
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: GestureDetector(
-              onTap: () {},
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text('HOME',
-                    style: GoogleFonts.roboto(
-                      fontSize: 14 * ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.5 * ffem / fem,
-                    )),
-              ),
-            ),
-          ),
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: GestureDetector(
-              onTap: () {},
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text('Showcase',
-                    style:
-                        GoogleFonts.roboto(fontSize: 14, color: navLinkColor)),
-              ),
-            ),
-          ),
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: GestureDetector(
-              onTap: () {},
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text('About Me',
-                    style:
-                        GoogleFonts.roboto(fontSize: 14, color: navLinkColor)),
-              ),
-            ),
-          ),
           ResponsiveVisibility(
-            visible: false,
+              visible: false,
+              visibleConditions: const [Condition.largerThan(name: MOBILE)],
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text('HOME',
+                        style: GoogleFonts.roboto(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          height: 1.5,
+                        )),
+                  ),
+                ),
+              )),
+          ResponsiveVisibility(
+              visible: false,
+              visibleConditions: const [Condition.largerThan(name: MOBILE)],
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text('Showcase',
+                        style: GoogleFonts.roboto(
+                            fontSize: 14, color: navLinkColor)),
+                  ),
+                ),
+              )),
+          ResponsiveVisibility(
+              visible: true,
+              visibleConditions: const [Condition.largerThan(name: MOBILE)],
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text('About Me',
+                        style: GoogleFonts.roboto(
+                            fontSize: 14, color: navLinkColor)),
+                  ),
+                ),
+              )),
+          ResponsiveVisibility(
+            visible: true,
             visibleConditions: const [Condition.largerThan(name: MOBILE)],
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
@@ -92,7 +101,7 @@ class Header extends StatelessWidget {
             ),
           ),
           ResponsiveVisibility(
-            visible: false,
+            visible: true,
             visibleConditions: const [Condition.largerThan(name: MOBILE)],
             child: MouseRegion(
               cursor: SystemMouseCursors.click,

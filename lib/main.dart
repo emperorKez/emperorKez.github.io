@@ -26,7 +26,7 @@ class WebPortfolio extends StatelessWidget {
         onGenerateRoute: (RouteSettings settings) {
           return Routes.fadeThrough(settings: settings, page: (BuildContext context) { 
             return MaxWidthBox(maxWidth: 1100, 
-            background: Container(color: Color(0xffe5e5e5),),
+            background: Container(color: const Color(0xffe5e5e5),),
             child: ResponsiveScaledBox(width: ResponsiveValue<double>(context, conditionalValues: [
               const Condition.equals(name: MOBILE, value: 450),
               const Condition.between(

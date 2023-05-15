@@ -16,7 +16,11 @@ class Showcase extends StatelessWidget {
           const Condition.largerThan(name: MOBILE, value: 50)
         ]).value!);
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: ResponsiveValue<EdgeInsets>(context,
+            defaultValue: const EdgeInsets.symmetric(vertical: 10),
+            conditionalValues: [
+          const Condition.largerThan(name: MOBILE, value: EdgeInsets.symmetric(vertical: 20))
+        ]).value! ,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +35,7 @@ class Showcase extends StatelessWidget {
               imageFirst: true,
               title: 'Online Shopping Mobile App',
               description:
-                  'An online shopping platform that enables users to browse and purchase products from the convenience of their mobile devices, provide a seamless and user-friendly experience, making it easy for users to find what they\'re looking for.'),
+                  'An online shopping platform that enables users to browse and purchase products from the convenience of their mobile devices, provide a seamless and user-friendly experience, making it easy for users to find what they\'re looking for.', context: context),
           verticalSpace,
           portfolioItem(
               workImage: 'assets/images/buzymart-seller.png',
@@ -40,7 +44,7 @@ class Showcase extends StatelessWidget {
               imageFirst: false,
               title: 'Online Shopping Mall Seller app',
               description:
-                  'An App that allows sellers to manage their online store on-the-go, upload product listings, manage orders, track inventory, communicate with customers, and receive payments. It provides a user-friendly interface that simplifies the process of managing an online store.'),
+                  'An App that allows sellers to manage their online store on-the-go, upload product listings, manage orders, track inventory, communicate with customers, and receive payments. It provides a user-friendly interface that simplifies the process of managing an online store.', context: context),
           verticalSpace,
           portfolioItem(
               workImage: 'assets/images/col-1-Q53.png',
@@ -48,7 +52,7 @@ class Showcase extends StatelessWidget {
               imageFirst: true,
               title: 'Online Dating Mobile App',
               description:
-                  'An online dating platform that allows users to create a profile, set their dating preferences, browse through other user profiles, and connect with potential romantic partners.'),
+                  'An online dating platform that allows users to create a profile, set their dating preferences, browse through other user profiles, and connect with potential romantic partners.', context: context),
           verticalSpace,
           portfolioItem(
               workImage: 'assets/images/todo-app.png',
@@ -56,14 +60,15 @@ class Showcase extends StatelessWidget {
               imageFirst: false,
               title: 'Todo Mobile App',
               description:
-                  'A productivity app that allows users to create and manage their daily tasks and to-do lists. The app helps users to organize and prioritize their tasks, set reminders and deadlines, and track their progress'),
+                  'A productivity app that allows users to create and manage their daily tasks and to-do lists. The app helps users to organize and prioritize their tasks, set reminders and deadlines, and track their progress', context: context),
         ],
       ),
     );
   }
 
   portfolioItem(
-      {required String workImage,
+      {required BuildContext context,
+        required String workImage,
       required String workUrl,
       required bool imageFirst,
       required String title,
@@ -96,7 +101,11 @@ class Showcase extends StatelessWidget {
                   style: GoogleFonts.roboto(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                      fontSize: 18)),
+                      fontSize: ResponsiveValue<double>(context,
+            defaultValue: 16,
+            conditionalValues: [
+          const Condition.largerThan(name: MOBILE, value: 18)
+        ]).value!)),
               const SizedBox(
                 height: 20,
               ),
@@ -104,10 +113,18 @@ class Showcase extends StatelessWidget {
               Text(
                 description,
                 style: GoogleFonts.roboto(
-                    color: Color(0xff7D7E82), fontSize: 14, height: 1.8),
+                    color: const Color(0xff7D7E82), fontSize: 14, height: ResponsiveValue<double>(context,
+            defaultValue: 1,
+            conditionalValues: [
+          const Condition.largerThan(name: MOBILE, value: 1.8)
+        ]).value!),
               ),
-              const SizedBox(
-                height: 20,
+               SizedBox(
+                height: ResponsiveValue<double>(context,
+            defaultValue: 10,
+            conditionalValues: [
+          const Condition.largerThan(name: MOBILE, value: 20)
+        ]).value!,
               ),
               ElevatedButton.icon(
                 onPressed: () => openUrl(workUrl),
