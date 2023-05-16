@@ -69,7 +69,7 @@ class Services extends StatelessWidget {
                   context: context,
                   borderColor: const Color(0xff7D7E82),
                   title: 'PIXEL PERFECT UI',
-                  iconUrl: 'assets/images/flutter.png'),
+                  iconUrl: 'assets/images/ui.png'),
               serviceItem(
                   context: context,
                   borderColor: const Color(0xff5E50B2),
