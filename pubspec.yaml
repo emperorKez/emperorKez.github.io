@@ -40,6 +40,8 @@ dependencies:
   animations:
   webview_flutter:
   url_launcher:
+  flutter_screenutil:
+  responsive_builder:
 
 dev_dependencies:
   flutter_test:

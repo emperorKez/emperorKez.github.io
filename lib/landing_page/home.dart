@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -11,31 +12,50 @@ class Home extends StatelessWidget {
     // double fem = MediaQuery.of(context).size.width / baseWidth;
     // double ffem = fem * 0.97;
     return Container(
-      height: 300,
-      padding: ResponsiveValue<EdgeInsets>(context,
-                defaultValue: const EdgeInsets.all(15),
-                conditionalValues: [
-                  const Condition.largerThan(name: MOBILE, value: EdgeInsets.all(50))
-                ]).value! ,
-      child: Center(
-        child: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-                style: GoogleFonts.mate(
-                    fontSize: 30, color: const Color(0xff7D7E82), height: 2.0),
-                children: [
-                  const TextSpan(
-                      text: 'I’m a mobile developer specialising in '),
-                  TextSpan(
-                      text: 'Hybrid ',
-                      style: GoogleFonts.mate(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  const TextSpan(text: 'Mobile App development with '),
-                  TextSpan(
-                      text: 'Flutter',
-                      style: GoogleFonts.mate(
-                          fontWeight: FontWeight.bold, color: Colors.white))
-                ])),
+      // height: 300,
+      // padding: ResponsiveValue<EdgeInsets>(context,
+      //           defaultValue: const EdgeInsets.all(15),
+      //           conditionalValues: [
+      //             const Condition.largerThan(name: MOBILE, value: EdgeInsets.all(50))
+      //           ]).value! ,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: double.infinity,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                'assets/images/header-image.png',
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                    style: GoogleFonts.mate(
+                        fontSize: 24.sp,
+                        color: const Color(0xff7D7E82),
+                        height: 2.0),
+                    children: [
+                      const TextSpan(
+                          text: 'A mobile developer specialised in '),
+                      TextSpan(
+                          text: 'Hybrid ',
+                          style: GoogleFonts.mate(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                      const TextSpan(text: 'Mobile App development with '),
+                      TextSpan(
+                          text: 'Flutter',
+                          style: GoogleFonts.mate(
+                              fontWeight: FontWeight.bold, color: Colors.white))
+                    ])),
+          ),
+        ],
       ),
     );
 

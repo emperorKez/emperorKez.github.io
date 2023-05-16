@@ -28,90 +28,94 @@ class Header extends StatelessWidget {
             'assets/images/coollogo_com.png',
             fit: BoxFit.fill,
             width: ResponsiveValue<double>(context,
-                defaultValue: 200,
+                defaultValue: 100,
                 conditionalValues: [
-                  const Condition.largerThan(name: MOBILE, value: 250)
+                  const Condition.largerThan(name: MOBILE, value: 150)
                 ]).value!,
-            height: 46,
+            //height: 46,
           ),
           const Spacer(),
-          ResponsiveVisibility(
-              visible: false,
-              visibleConditions: const [Condition.largerThan(name: MOBILE)],
-              child: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Text('HOME',
-                        style: GoogleFonts.roboto(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          height: 1.5,
-                        )),
-                  ),
-                ),
+          // ResponsiveVisibility(
+          //     visible: false,
+          //     visibleConditions: const [Condition.largerThan(name: MOBILE)],
+          //     child: MouseRegion(
+          //       cursor: SystemMouseCursors.click,
+          //       child: GestureDetector(
+          //         onTap: () {},
+          //         child: Padding(
+          //           padding: const EdgeInsets.symmetric(horizontal: 10),
+          //           child: Text('Home',
+          //               style: GoogleFonts.roboto( color: navLinkColor,
+          //                 fontSize: 14,
+          //                 fontWeight: FontWeight.w600,
+          //                 //height: 1.5,
+          //               )),
+          //         ),
+          //       ),
+          //     )),
+          // ResponsiveVisibility(
+          //     visible: false,
+          //     visibleConditions: const [Condition.largerThan(name: MOBILE)],
+          //     child: MouseRegion(
+          //       cursor: SystemMouseCursors.click,
+          //       child: GestureDetector(
+          //         onTap: () {},
+          //         child: Padding(
+          //           padding: const EdgeInsets.symmetric(horizontal: 10),
+          //           child: Text('Showcase',
+          //               style: GoogleFonts.roboto(
+          //                   fontSize: 14, color: navLinkColor)),
+          //         ),
+          //       ),
+          //     )),
+          // ResponsiveVisibility(
+          //     visible: true,
+          //     visibleConditions: const [Condition.largerThan(name: MOBILE)],
+          //     child: MouseRegion(
+          //       cursor: SystemMouseCursors.click,
+          //       child: GestureDetector(
+          //         onTap: () {},
+          //         child: Padding(
+          //           padding: const EdgeInsets.symmetric(horizontal: 10),
+          //           child: Text('About Me',
+          //               style: GoogleFonts.roboto(
+          //                   fontSize: 14, color: navLinkColor)),
+          //         ),
+          //       ),
+          //     )),
+          IconButton(
+              onPressed: () => makePhoneCall(),
+              icon: const Icon(
+                Icons.local_phone_sharp,
+                color: navLinkColor,
               )),
-          ResponsiveVisibility(
-              visible: false,
-              visibleConditions: const [Condition.largerThan(name: MOBILE)],
-              child: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Text('Showcase',
-                        style: GoogleFonts.roboto(
-                            fontSize: 14, color: navLinkColor)),
-                  ),
-                ),
+          IconButton(
+              onPressed: () => sendEmail(),
+              icon: const Icon(
+                Icons.mail,
+                color: navLinkColor,
               )),
-          ResponsiveVisibility(
-              visible: true,
-              visibleConditions: const [Condition.largerThan(name: MOBILE)],
-              child: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Text('About Me',
-                        style: GoogleFonts.roboto(
-                            fontSize: 14, color: navLinkColor)),
-                  ),
-                ),
-              )),
-          ResponsiveVisibility(
-            visible: true,
-            visibleConditions: const [Condition.largerThan(name: MOBILE)],
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () => openUrl('https://github.com/emperorkez'),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: ImageIcon(
-                      AssetImage("assets/images/icon_github_64x.png"),
-                      color: navLinkColor,
-                      size: 24),
-                ),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () => openUrl('https://github.com/emperorkez'),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: ImageIcon(
+                    AssetImage("assets/images/icon_github_64x.png"),
+                    color: navLinkColor,
+                    size: 24),
               ),
             ),
           ),
-          ResponsiveVisibility(
-            visible: true,
-            visibleConditions: const [Condition.largerThan(name: MOBILE)],
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () => openUrl('https://linkedin.com/emperorkez'),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: ImageIcon(AssetImage("assets/images/linkedin.png"),
-                      color: navLinkColor, size: 24),
-                ),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () => openUrl('https://linkedin.com/emperorkez'),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: ImageIcon(AssetImage("assets/images/linkedin.png"),
+                    color: navLinkColor, size: 24),
               ),
             ),
           ),

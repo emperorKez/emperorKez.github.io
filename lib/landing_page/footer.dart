@@ -22,7 +22,8 @@ class Footer extends StatelessWidget {
                 const TextSpan(text: 'Get '),
                 TextSpan(
                     text: 'in Touch.',
-                    style: GoogleFonts.workSans(fontWeight: FontWeight.bold, color: Colors.white))
+                    style: GoogleFonts.workSans(
+                        fontWeight: FontWeight.bold, color: Colors.white))
               ])),
           // const SizedBox(
           //   height: 15,
@@ -90,9 +91,9 @@ class Footer extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          // const SizedBox(
+          //   height: 10,
+          // ),
           Text('Built with Flutter by emperorKez',
               style:
                   GoogleFonts.workSans(fontSize: 14, color: Color(0xff7D7E82))),

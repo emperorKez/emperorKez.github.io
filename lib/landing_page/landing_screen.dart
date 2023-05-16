@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/landing_page/about-me.dart';
 import 'package:portfolio/landing_page/home.dart';
 import 'package:portfolio/landing_page/services.dart';
@@ -13,6 +14,18 @@ class LandingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Device Size:${Size(1.sw, 1.sh)}');
+    print('Device pixel density:${ScreenUtil().pixelRatio}');
+    print('Bottom safe zone distance dp:${ScreenUtil().bottomBarHeight}dp');
+    print('Status bar height dp:${ScreenUtil().statusBarHeight}dp');
+    print('The ratio of actual width to UI design:${ScreenUtil().scaleWidth}');
+    print(
+        'The ratio of actual height to UI design:${ScreenUtil().scaleHeight}');
+    print('System font scaling:${ScreenUtil().textScaleFactor}');
+    print('0.5 times the screen width:${0.5.sw}dp');
+    print('0.5 times the screen height:${0.5.sh}dp');
+    print('Screen orientation:${ScreenUtil().orientation}');
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -32,19 +45,29 @@ class LandingScreen extends StatelessWidget {
           ),
         ),
         child: ListView(
-          shrinkWrap: true, 
+          shrinkWrap: true,
           physics: const AlwaysScrollableScrollPhysics(),
-          padding: ResponsiveValue<EdgeInsets>(context, 
-          defaultValue: const EdgeInsets.symmetric(horizontal: 20),
-          conditionalValues: [
-            const Condition.equals(name: MOBILE, value: EdgeInsets.symmetric(horizontal: 20)),
-            const Condition.largerThan(name: TABLET, value: EdgeInsets.symmetric(horizontal: 50))
-          ]).value,
-          children: const [
+          padding: ResponsiveValue<EdgeInsets>(context,
+              defaultValue: const EdgeInsets.symmetric(horizontal: 20),
+              conditionalValues: [
+                const Condition.equals(
+                    name: MOBILE, value: EdgeInsets.symmetric(horizontal: 20)),
+                const Condition.largerThan(
+                    name: TABLET, value: EdgeInsets.symmetric(horizontal: 50))
+              ]).value,
+          children:  [
             Header(),
+            SizedBox(
+              height: 20.w,
+            ),
             Home(),
+            SizedBox(
+              height: 40.w,
+            ),
             Services(),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Showcase(),
             AboutMe(),
             Footer()
