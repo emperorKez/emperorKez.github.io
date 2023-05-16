@@ -116,29 +116,32 @@ class Services extends StatelessWidget {
         //mainAxisAlignment: MainAxisAlignment.center,
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-              width: 100.w,
-              height: 100.w,
-              //constraints: const BoxConstraints(maxHeight: 72, maxWidth: 72),
-              child: Image.asset(
-                iconUrl,
-                //color: const Color(0xff7D7E82),
-              )),
-          const SizedBox(
-            height: 20,
+          Expanded(
+            child: Container(
+                padding: EdgeInsets.all(20.w),
+                // width: 100.w,
+                // height: 100.w,
+                //constraints: const BoxConstraints(maxHeight: 72, maxWidth: 72),
+                child: Image.asset(
+                  iconUrl,
+                  //color: const Color(0xff7D7E82),
+                )),
           ),
-          Text(
-            title,
-            style: GoogleFonts.roboto(
-                color: borderColor,
-                fontSize: ResponsiveValue<double>(context,
-                    defaultValue: 12,
-                    conditionalValues: [
-                      const Condition.equals(name: TABLET, value: 14),
-                      const Condition.largerThan(name: TABLET, value: 20)
-                    ]).value,
-                fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 15),
+            child: Text(
+              title,
+              style: GoogleFonts.roboto(
+                  color: borderColor,
+                  fontSize: ResponsiveValue<double>(context,
+                      defaultValue: 12,
+                      conditionalValues: [
+                        const Condition.equals(name: TABLET, value: 14),
+                        const Condition.largerThan(name: TABLET, value: 20)
+                      ]).value,
+                  fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       )),
