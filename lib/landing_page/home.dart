@@ -37,7 +37,11 @@ class Home extends StatelessWidget {
                 textAlign: TextAlign.center,
                 text: TextSpan(
                     style: GoogleFonts.mate(
-                        fontSize: 24.sp,
+                        fontSize: ResponsiveValue<double>(context,
+                        defaultValue: 14, 
+                        conditionalValues: [Condition.equals(name: TABLET, value: 20),
+                          Condition.largerThan(name: TABLET, value: 24)]).value,
+                        
                         color: const Color(0xff7D7E82),
                         height: 2.0),
                     children: [

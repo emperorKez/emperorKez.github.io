@@ -38,8 +38,16 @@ class Services extends StatelessWidget {
 
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Services we offer'),
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical: 15),
+          child: Text(
+            'Area of Expertise',
+            textAlign: TextAlign.start,
+            style: TextStyle(fontSize: 16, color: Colors.white),
+          ),
+        ),
         GridView.count(
             shrinkWrap: true,
             physics: const ClampingScrollPhysics(),
@@ -60,45 +68,33 @@ class Services extends StatelessWidget {
               serviceItem(
                   context: context,
                   borderColor: const Color(0xff7D7E82),
-                  title: 'UI & UX DESIGNING',
-                  content:
-                      'I design beautiful web iterfaces with Figma and Adove XD',
-                  iconUrl: 'assets/images/ruler&pen.png'),
+                  title: 'PIXEL PERFECT UI',
+                  iconUrl: 'assets/images/flutter.png'),
               serviceItem(
                   context: context,
                   borderColor: const Color(0xff5E50B2),
-                  title: 'WEB DEVELOPMENT',
-                  content:
-                      'I create beautiful iterfaces with simple HTML, CSS, & JavaScript and also frameworks like Angular and ReactJS',
-                  iconUrl: 'assets/images/code.png'),
+                  title: 'API INTEGRATION',
+                  iconUrl: 'assets/images/api.png'),
               serviceItem(
                   context: context,
                   borderColor: const Color(0xff7D7E82),
-                  title: 'MOBILE DEVELOPMENT',
-                  content:
-                      'I am an expert mobile developer. I have experience using Flutter and React Native.',
-                  iconUrl: 'assets/images/android.png'),
+                  title: 'BLOC STATE MANAGEMENT',
+                  iconUrl: 'assets/images/bloc.png'),
               serviceItem(
                   context: context,
                   borderColor: const Color(0xff5E50B2),
                   title: 'VERSION CONTROL',
-                  content:
-                      'I can use version control systems well, and Git & Mecurial are my go-to tool.',
-                  iconUrl: 'assets/images/git-repo.png'),
+                  iconUrl: 'assets/images/git.png'),
               serviceItem(
                   context: context,
                   borderColor: const Color(0xff7D7E82),
-                  title: 'NPM AND NODEJS',
-                  content:
-                      'I have core understanding of NPM. I can also develop general purpose applications with NodeJS',
-                  iconUrl: 'assets/images/javascript.png'),
+                  title: 'FIREBASE',
+                  iconUrl: 'assets/images/firebase.png'),
               serviceItem(
                   context: context,
                   borderColor: const Color(0xff5E50B2),
-                  title: 'WEB SCRAPING',
-                  content:
-                      'I have core understanding of NPM. I can also develop general purpose applications with NodeJS',
-                  iconUrl: 'assets/images/slider.png')
+                  title: 'CI/CD',
+                  iconUrl: 'assets/images/cicd.png')
             ])
       ],
     );
@@ -108,7 +104,6 @@ class Services extends StatelessWidget {
       {required BuildContext context,
       required Color borderColor,
       required String title,
-      required String content,
       required String iconUrl}) {
     return Container(
       decoration: BoxDecoration(
@@ -121,42 +116,28 @@ class Services extends StatelessWidget {
         //mainAxisAlignment: MainAxisAlignment.center,
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ConstrainedBox(
-              //width: 72, height: 72,
-              constraints: const BoxConstraints(maxHeight: 72, maxWidth: 72),
+          Container(
+              width: 100.w,
+              height: 100.w,
+              //constraints: const BoxConstraints(maxHeight: 72, maxWidth: 72),
               child: Image.asset(
                 iconUrl,
-                color: const Color(0xff7D7E82),
+                //color: const Color(0xff7D7E82),
               )),
-          SizedBox(
-            height: 15.w,
+          const SizedBox(
+            height: 20,
           ),
           Text(
             title,
             style: GoogleFonts.roboto(
                 color: borderColor,
-                fontSize: 20.sp,
-                // ResponsiveValue<double>(context,
-                //     defaultValue: 14,
-                //     conditionalValues: [
-                //       const Condition.largerThan(name: TABLET, value: 20)
-                //     ]).value,
-                fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: 15.w,
-          ),
-          Text(
-            content,
-            style: GoogleFonts.roboto(
-                fontSize: 16.sp,
-                color: const Color(0xff7D7E82),
-                height: ResponsiveValue<double>(context,
-                    defaultValue: 1.0,
+                fontSize: ResponsiveValue<double>(context,
+                    defaultValue: 12,
                     conditionalValues: [
-                      const Condition.largerThan(name: TABLET, value: 1.5)
-                    ]).value),
+                      const Condition.equals(name: TABLET, value: 14),
+                      const Condition.largerThan(name: TABLET, value: 20)
+                    ]).value,
+                fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
         ],

@@ -28,8 +28,10 @@ class AboutMe extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('About me'.toUpperCase(),
+                    Text('About me',
+                        //toUpperCase(),
                         textAlign: TextAlign.left,
                         style: GoogleFonts.roboto(
                           fontSize: 20,
@@ -54,7 +56,7 @@ class AboutMe extends StatelessWidget {
                       textAlign: TextAlign.left,
                       style: GoogleFonts.roboto(
                           fontSize: ResponsiveValue<double>(context,
-                              defaultValue: 12,
+                              defaultValue: 14,
                               conditionalValues: [
                                 Condition.equals(name: TABLET, value: 14),
                                 const Condition.largerThan(
