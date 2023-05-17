@@ -17,7 +17,7 @@ class Footer extends StatelessWidget {
           RichText(
               text: TextSpan(
                   style: GoogleFonts.workSans(
-                      fontSize: 22, color: Color(0xff7D7E82)),
+                      fontSize: 22, color: const Color(0xff7D7E82)),
                   children: [
                 const TextSpan(text: 'Get '),
                 TextSpan(
@@ -30,7 +30,7 @@ class Footer extends StatelessWidget {
           // ),
           Text('So that we can talk more about...',
               style:
-                  GoogleFonts.workSans(fontSize: 14, color: Color(0xff7D7E82))),
+                  GoogleFonts.workSans(fontSize: 14, color: const Color(0xff7D7E82))),
           const SizedBox(
             height: 30,
           ),
@@ -96,7 +96,7 @@ class Footer extends StatelessWidget {
           // ),
           Text('Built with Flutter by emperorKez',
               style:
-                  GoogleFonts.workSans(fontSize: 14, color: Color(0xff7D7E82))),
+                  GoogleFonts.workSans(fontSize: 14, color: const Color(0xff7D7E82))),
         ],
       ),
     );

@@ -81,7 +81,7 @@ class Showcase extends StatelessWidget {
       required String description}) {
     return GridView.count(
       shrinkWrap: true,
-      physics: ClampingScrollPhysics(),
+      physics: const ClampingScrollPhysics(),
       crossAxisCount: 2,
       crossAxisSpacing: 20,
       children: [

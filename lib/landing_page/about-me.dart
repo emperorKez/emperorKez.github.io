@@ -40,7 +40,7 @@ class AboutMe extends StatelessWidget {
                     Container(
                       width: double.infinity,
                       height: 300.w,
-                      margin: EdgeInsets.symmetric(vertical: 10),
+                      margin: const EdgeInsets.symmetric(vertical: 10),
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.asset(
@@ -58,7 +58,7 @@ class AboutMe extends StatelessWidget {
                           fontSize: ResponsiveValue<double>(context,
                               defaultValue: 14,
                               conditionalValues: [
-                                Condition.equals(name: TABLET, value: 14),
+                                const Condition.equals(name: TABLET, value: 14),
                                 const Condition.largerThan(
                                     name: MOBILE, value: 16)
                               ]).value!,

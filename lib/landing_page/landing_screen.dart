@@ -56,21 +56,21 @@ class LandingScreen extends StatelessWidget {
                     name: TABLET, value: EdgeInsets.symmetric(horizontal: 50))
               ]).value,
           children:  [
-            Header(),
+            const Header(),
             SizedBox(
               height: 20.w,
             ),
-            Home(),
+            const Home(),
             SizedBox(
               height: 40.w,
             ),
-            Services(),
-            SizedBox(
+            const Services(),
+            const SizedBox(
               height: 20,
             ),
-            Showcase(),
-            AboutMe(),
-            Footer()
+            const Showcase(),
+            const AboutMe(),
+            const Footer()
 
             // AboutSummary()
           ],

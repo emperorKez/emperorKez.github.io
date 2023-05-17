@@ -32,15 +32,15 @@ class Home extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
                     style: GoogleFonts.mate(
                         fontSize: ResponsiveValue<double>(context,
                         defaultValue: 14, 
-                        conditionalValues: [Condition.equals(name: TABLET, value: 20),
-                          Condition.largerThan(name: TABLET, value: 24)]).value,
+                        conditionalValues: [const Condition.equals(name: TABLET, value: 20),
+                          const Condition.largerThan(name: TABLET, value: 24)]).value,
                         
                         color: const Color(0xff7D7E82),
                         height: 2.0),
