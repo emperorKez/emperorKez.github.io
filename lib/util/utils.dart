@@ -23,11 +23,17 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
 // }
 
 Future<void> openUrl( String url) async {
-  final Uri launchUri = Uri(
-    scheme: 'https',
-    path: url
-  );
-  await launchUrl(launchUri);
+final Uri _url = Uri.parse(url);
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+
+
+  // final Uri launchUri = Uri(
+  //   scheme: 'https',
+  //   path: url
+  // );
+  // await launchUrl(launchUri);
 }
 
   Future<void> sendEmail() async {
