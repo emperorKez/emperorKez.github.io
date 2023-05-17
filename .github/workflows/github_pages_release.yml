@@ -67,7 +67,7 @@ jobs:
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
           NETLIFY_AUTH_TOKEN: Ur7kJI_2L5DGzXh7BrcBHT8f9RQAfCKzBwoIuoSDL_c
-          NETLIFY_SITE_ID: 7eb52b09-320f-49f9-927e-ded27d6e1632
+          NETLIFY_SITE_ID: 0b38f025-452f-4bb3-a1a6-a5137530f814
           NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
           NETLIFY_DEPLOY_TO_PROD: true
           install_command: "echo Skipping installing the dependencies"
