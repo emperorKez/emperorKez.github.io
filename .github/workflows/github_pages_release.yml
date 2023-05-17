@@ -57,7 +57,7 @@ jobs:
       - name: Build
         run: flutter build web --release
   
-      - name: Deploy
+      - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
@@ -70,6 +70,8 @@ jobs:
           NETLIFY_SITE_ID: 7eb52b09-320f-49f9-927e-ded27d6e1632
           NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
           NETLIFY_DEPLOY_TO_PROD: true
+          install_command: "echo Skipping installing the dependencies"
+          build_command: "echo Skipping building the web files"
 
 
 # jobs:

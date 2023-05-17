@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:portfolio/route.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 import 'landing_page/landing_screen.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const WebPortfolio());
 }
 
