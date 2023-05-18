@@ -20665,7 +20665,7 @@ return A.X($async$On,r)},
 Ol(){var s=0,r=A.Y(t.H)
 var $async$Ol=A.Z(function(a,b){if(a===1)return A.V(b,r)
 while(true)switch(s){case 0:s=2
-return A.a_(A.Oh(A.a61(null,"2348062905976",null,"tel")),$async$Ol)
+return A.a_(A.Oh(A.a61(null,"+2348062905976",null,"tel")),$async$Ol)
 case 2:return A.W(null,r)}})
 return A.X($async$Ol,r)},
 at0(a){switch(a.a){case 0:return B.tF
@@ -21531,7 +21531,7 @@ $1(a){var s=$.cu
 s=(s==null?$.cu=A.fy(self.window.flutterConfiguration):s).b
 if(s==null)s=null
 else{s=s.canvasKitBaseUrl
-if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/d44b5a94c976fbb65815374f61ab5392a220b084/":s)+a},
+if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/b4fb11214dd2dda6ce012dd98ea498e9e8b91262/":s)+a},
 $S:52}
 A.a6H.prototype={
 $1(a){this.a.remove()
@@ -44968,7 +44968,7 @@ yO(a){var s,r={},q=a.a
 if(q==null)q=$.n_()
 r.a=r.b=null
 s=t.P
-A.amJ(q.a1O("AssetManifest.bin",A.asD(),t.jo).bd(new A.OY(r,this,a,q),s),new A.OZ(r),s,t.K)
+A.amJ(q.a1O("AssetManifest.smcbin",A.asD(),t.jo).bd(new A.OY(r,this,a,q),s),new A.OZ(r),s,t.K)
 s=r.a
 if(s!=null)return s
 s=new A.a9($.a7,t.Lv)
@@ -62602,12 +62602,12 @@ p===$&&A.c()
 p=20*(o/p.a)
 return A.dj(s,A.a8T(A.no(A.a([A.a9f(A.dj(s,A.rO(c,s,s),s,s,s,s,new A.aX(p,p,p,p),s),1),new A.dz(B.jm,A.mx(d,A.rI(a,A.eK(b,A.a([B.j7,B.yg],t._R),12,t.i).a,B.a9,s),B.ew),s)],t.G),B.b2,B.ay,B.bt),s,s),s,new A.fs(s,s,r,q,s,s,B.bg),s,s,B.cs,s)}}
 A.Fs.prototype={
-O(a){var s,r=this,q=null,p="workUrl",o=A.eK(a,A.a([B.y5],t._R),20,t.i).a
-o.toString
-s=A.iX(q,o,q)
-o=A.eK(a,A.a([B.yo],t.Kz),B.dB,t.U6).a
-o.toString
-return A.dj(q,A.no(A.a([A.mx("Selected Works",A.rI(B.h,18,q,q),q),s,r.tb(a,"An online shopping platform that enables users to browse and purchase products from the convenience of their mobile devices, provide a seamless and user-friendly experience, making it easy for users to find what they're looking for.",!0,"Online Shopping Mobile App","assets/images/buzymart.png",p),s,r.tb(a,"An App that allows sellers to manage their online store on-the-go, upload product listings, manage orders, track inventory, communicate with customers, and receive payments. It provides a user-friendly interface that simplifies the process of managing an online store.",!1,"Online Shopping Mall Seller app","assets/images/buzymart-seller.png","https://play.google.com/store/apps/details?id=com.buzymart.seller"),s,r.tb(a,"An online dating platform that allows users to create a profile, set their dating preferences, browse through other user profiles, and connect with potential romantic partners.",!0,"Online Dating Mobile App","assets/images/col-1-Q53.png",p),s,r.tb(a,"A productivity app that allows users to create and manage their daily tasks and to-do lists. The app helps users to organize and prioritize their tasks, set reminders and deadlines, and track their progress",!1,"Todo Mobile App","assets/images/todo-app.png",p)],t.G),B.bL,B.ay,B.bW),q,q,q,q,o,q)},
+O(a){var s,r=this,q=null,p=A.eK(a,A.a([B.y5],t._R),20,t.i).a
+p.toString
+s=A.iX(q,p,q)
+p=A.eK(a,A.a([B.yo],t.Kz),B.dB,t.U6).a
+p.toString
+return A.dj(q,A.no(A.a([A.mx("Selected Works",A.rI(B.h,18,q,q),q),s,r.tb(a,"An online shopping platform that enables users to browse and purchase products from the convenience of their mobile devices, provide a seamless and user-friendly experience, making it easy for users to find what they're looking for.",!0,"Online Shopping Mobile App","assets/images/buzymart.png","https://play.google.com/store/apps/details?id=com.buzymart"),s,r.tb(a,"An App that allows sellers to manage their online store on-the-go, upload product listings, manage orders, track inventory, communicate with customers, and receive payments. It provides a user-friendly interface that simplifies the process of managing an online store.",!1,"Online Shopping Mall Seller app","assets/images/buzymart-seller.png","https://play.google.com/store/apps/details?id=com.buzymart.seller"),s,r.tb(a,"An online dating platform that allows users to create a profile, set their dating preferences, browse through other user profiles, and connect with potential romantic partners.",!0,"Online Dating Mobile App","assets/images/dating-app.png","workUrl"),s,r.tb(a,"A productivity app that allows users to create and manage their daily tasks and to-do lists. The app helps users to organize and prioritize their tasks, set reminders and deadlines, and track their progress",!1,"Todo Mobile App","assets/images/todo-app.png","workUrl")],t.G),B.bL,B.ay,B.bW),q,q,q,q,p,q)},
 tb(a,b,c,d,e,f){var s,r,q,p,o,n=null,m=t.G,l=A.a([],m)
 if(c)l.push(A.Q9(A.jH(10),A.rO(e,B.ci,n)))
 s=t._R
