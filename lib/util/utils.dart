@@ -47,7 +47,7 @@ final Uri _url = Uri.parse(url);
   Future<void> makePhoneCall() async {
     final Uri launchUri = Uri(
       scheme: 'tel',
-      path: '2348062905976',
+      path: '+2348062905976',
     );
     await launchUrl(launchUri); 
   }

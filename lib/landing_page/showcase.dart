@@ -33,7 +33,7 @@ class Showcase extends StatelessWidget {
           verticalSpace,
           portfolioItem(
               workImage: 'assets/images/buzymart.png',
-              workUrl: 'workUrl',
+              workUrl: 'https://play.google.com/store/apps/details?id=com.buzymart',
               imageFirst: true,
               title: 'Online Shopping Mobile App',
               description:
@@ -51,7 +51,7 @@ class Showcase extends StatelessWidget {
               context: context),
           verticalSpace,
           portfolioItem(
-              workImage: 'assets/images/col-1-Q53.png',
+              workImage: 'assets/images/dating-app.png',
               workUrl: 'workUrl',
               imageFirst: true,
               title: 'Online Dating Mobile App',
