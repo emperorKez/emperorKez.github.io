@@ -111,7 +111,7 @@ class Header extends StatelessWidget {
           MouseRegion(
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
-              onTap: () => openUrl('https://linkedin.com/emperorkez'),
+              onTap: () => openUrl('https://www.linkedin.com/in/emperorkez'),
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8),
                 child: ImageIcon(AssetImage("assets/images/linkedin.png"),

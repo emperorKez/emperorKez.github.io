@@ -51,7 +51,7 @@ jobs:
   
       # - name: Install
       #   run: |
-      #     flutter config --enable-web
+      #     flutter config --enable-web 
       #     flutter pub get
   
       - name: Build

@@ -118,7 +118,7 @@ class Services extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-                padding: EdgeInsets.all(20.w),
+                padding: EdgeInsets.all(30.w),
                 // width: 100.w,
                 // height: 100.w,
                 //constraints: const BoxConstraints(maxHeight: 72, maxWidth: 72),
@@ -136,8 +136,8 @@ class Services extends StatelessWidget {
                   fontSize: ResponsiveValue<double>(context,
                       defaultValue: 12,
                       conditionalValues: [
-                        const Condition.equals(name: TABLET, value: 14),
-                        const Condition.largerThan(name: TABLET, value: 20)
+                        const Condition.equals(name: TABLET, value: 12),
+                        const Condition.largerThan(name: TABLET, value: 18)
                       ]).value,
                   fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,

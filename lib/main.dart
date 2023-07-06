@@ -1,12 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:portfolio/route.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import 'firebase_options.dart';
 import 'landing_page/landing_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+   await Firebase.initializeApp(
+options: DefaultFirebaseOptions.currentPlatform,
+);
+
   usePathUrlStrategy();
   runApp(const WebPortfolio());
 }
@@ -14,7 +21,7 @@ void main() {
 class WebPortfolio extends StatelessWidget {
   const WebPortfolio({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of your application. 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

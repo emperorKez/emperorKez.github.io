@@ -42,6 +42,8 @@ dependencies:
   url_launcher:
   flutter_screenutil:
   responsive_builder:
+  firebase_analytics:
+  firebase_core:
 
 dev_dependencies:
   flutter_test:

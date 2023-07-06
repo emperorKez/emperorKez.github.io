@@ -29,8 +29,8 @@ class Footer extends StatelessWidget {
           //   height: 15,
           // ),
           Text('So that we can talk more about...',
-              style:
-                  GoogleFonts.workSans(fontSize: 14, color: const Color(0xff7D7E82))),
+              style: GoogleFonts.workSans(
+                  fontSize: 14, color: const Color(0xff7D7E82))),
           const SizedBox(
             height: 30,
           ),
@@ -80,7 +80,8 @@ class Footer extends StatelessWidget {
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () => openUrl('https://linkedin.com/emperorkez'),
+                    onTap: () =>
+                        openUrl('https://www.linkedin.com/in/emperorkez'),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8),
                       child: ImageIcon(AssetImage("assets/images/linkedin.png"),
@@ -95,8 +96,8 @@ class Footer extends StatelessWidget {
           //   height: 10,
           // ),
           Text('Built with Flutter by emperorKez',
-              style:
-                  GoogleFonts.workSans(fontSize: 14, color: const Color(0xff7D7E82))),
+              style: GoogleFonts.workSans(
+                  fontSize: 14, color: const Color(0xff7D7E82))),
         ],
       ),
     );
